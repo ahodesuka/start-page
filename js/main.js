@@ -2,9 +2,9 @@ var config =
 {
     "sites":
     [
-        { "url": "https://boards.4chan.org/jp/",                                    "text": "/jp/" },
-        { "url": "https://boards.4chan.org/a/",                                     "text": "/a/"  },
-        { "url": "https://boards.4chan.org/g/",                                     "text": "/g/"  },
+        { "url": "https://boards.4chan.org/jp/#catalog",                            "text": "/jp/" },
+        { "url": "https://boards.4chan.org/a/#catalog",                             "text": "/a/"  },
+        { "url": "https://boards.4chan.org/g/#catalog",                             "text": "/g/"  },
         { "url": "http://nibl.co.uk/bots.php",                                      "text": "XDCC" },
         { "url": "https://sceneaccess.eu",                                          "text": "SCC"  },
         { "url": "http://bakabt.me/",                                               "text": "BBT"  },
@@ -14,13 +14,7 @@ var config =
         { "url": "https://github.com/",                                             "text": "GH"   },
         { "url": "http://www.last.fm/home",                                         "text": "l.fm" },
         { "url": "http://what.cd/index.php",                                        "text": "W.CD" },
-    ],
-    "search":
-    {
-        "url"  : "https://duckduckgo.com",
-        "name" : "DuckDuckGo",
-        "query": "q"
-    }
+    ]
 }, d = document;
 
 d.addEventListener("DOMContentLoaded", function()
@@ -51,11 +45,4 @@ d.addEventListener("DOMContentLoaded", function()
 
         d.querySelector("#page" + Math.floor(p)).appendChild(site);
     }
-
-    var form = d.querySelector("#search form"),
-        text = form.querySelector("input");
-    form.action      = config.search.url;
-    text.name        = config.search.query;
-    text.placeholder = config.search.name;
-    text.focus();
 });
